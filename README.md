@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-MAC Address Manager
+OMac is a MAC address management suite for Debian-based Linux. It spoofs, restores, rotates, and analyzes MAC addresses, with ghost/burn modes, history, profiles, NetworkManager integration, live monitor, and export. CLI flags cover interface selection, vendor/OUI presets, and dry-run/permanent options.
 
 ---
 
 ## ✨ Features
 
-- MAC address spoofing and network interface anonymity utility
+- Spoof a MAC on a target interface (`--mac` or random) with optional real OUI / vendor preset
+- Restore, rotate, ghost, and burn modes for temporary or aggressive MAC changes
+- Analyze a MAC string; scan and live-monitor interface traffic/state
+- History tracking and export to JSON or CSV; profile save/load actions
+- NetworkManager-aware permanent change option and dry-run / force / no-confirm controls
+- Interval and timer knobs for rotate/monitor workflows
 
 ---
 
@@ -38,7 +43,10 @@ MAC Address Manager
 ## 🚀 Usage
 
 ```bash
-./OMac
+./OMac -i eth0 -m random -r
+./OMac --restore eth0
+./OMac --analyze aa:bb:cc:dd:ee:ff --export json
+./OMac --help
 ```
 
 ---
